@@ -7,6 +7,6 @@ dependencies:
   - pip
   - pip:
     - seaborn
-    - sklearn
+    - scikit-learn
     - pandas
     - matplotlib
