@@ -40,7 +40,7 @@ You can run the notebook in a variety of ways:
 
 Click the following button to launch the notebook in a MyBinder environment:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/your-username/decision-trees-random-forests/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LEAN-96/Decision-Tree.git/HEAD?labpath=notebooks)
 
 This will open a Jupyter environment with all necessary dependencies pre-installed.
 
