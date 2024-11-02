@@ -1,5 +1,6 @@
 # Decision Trees and Random Forests Project
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LEAN-96/Decision-Tree.git/HEAD?labpath=notebooks)
+
 This repository contains a Jupyter notebook for exploring and implementing Decision Trees and Random Forests. The notebook demonstrates data preparation, visualization, model training, and evaluation on a dataset of loan data. 
 
 ## Project Structure
