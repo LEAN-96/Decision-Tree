@@ -1,12 +1,14 @@
-name: example-environment
+name: decision-tree-random-forest-environment
 channels:
   - conda-forge
 dependencies:
   - python
   - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
   - pip
   - pip:
-    - seaborn
-    - scikit-learn
-    - pandas
-    - matplotlib
+      - nbgitpuller
+      - sphinx-gallery
