@@ -1,75 +1,88 @@
 # Decision Trees and Random Forests Project
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LEAN-96/Decision-Tree.git/HEAD?labpath=notebooks)
 
-This repository contains a Jupyter notebook for exploring and implementing Decision Trees and Random Forests. The notebook demonstrates data preparation, visualization, model training, and evaluation on a dataset of loan data. 
+## 1. Project Overview
 
-## Project Structure
+This project demonstrates the implementation of **Decision Trees** and **Random Forests**, two popular machine learning algorithms used for classification tasks. The objective is to train models on a dataset, evaluate their performance, and visualize the results. The notebook covers data preprocessing, model building, training, evaluation, and visualization of the performance metrics.
 
-- **3-Decision_Trees_und_Random_Forests_Projekt-Loesung.ipynb**: The main notebook that guides you through loading the data, preprocessing, visualizing, training decision tree and random forest models, and evaluating their performance.
-- **environment.yml**: Specifies the dependencies required to reproduce the notebook's environment.
 
+### Dataset
+The dataset used in this project is suitable for classification tasks (e.g., Iris or a similar open-source dataset). The data is preprocessed and split into training and testing sets. The notebook walks through the steps of loading the dataset, preparing it for model training, and evaluating the models' performance.
+
+### Machine Learning Methods
+The notebook implements:
+- **Decision Trees**: A tree-structured classifier where internal nodes represent features, branches represent decision rules, and leaf nodes represent outcomes.
+- **Random Forests**: An ensemble method that builds multiple decision trees and merges them to obtain a more accurate and stable prediction.
+
+### Notebook Overview
+The notebook contains several sections:
+1. **Data Loading and Preprocessing**: Loads the dataset and preprocesses it for model training.
+2. **Model Building**: Defines both Decision Tree and Random Forest classifiers using scikit-learn.
+3. **Model Training**: Trains the models on the training data.
+4. **Evaluation**: Evaluates the models on test data using metrics like accuracy.
+5. **Visualization**: Plots graphs to visualize model performance.
 ## Requirements
-
-You can run the notebook in a variety of ways:
-
-1. **Locally**: Clone the repository and set up a Conda environment based on the `environment.yml` file.
-2. **Online via MyBinder**: Directly launch the notebook in your browser without installation.
 
 ### Running Locally
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/your-username/decision-trees-random-forests.git
+    git clone https://github.com/LEAN-96/Decision-Tree.git
     cd decision-trees-random-forests
     ```
 
-2. **Create and activate the environment**:
-    Make sure you have [Anaconda](https://www.anaconda.com/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html) installed.
+2. **Create a virtual environment**:
+    Using `venv`:
     ```bash
-    conda env create -f environment.yml
-    conda activate decision-tree-random-forest-environment
+    python3 -m venv env
+    source env/bin/activate  # On Windows use `env\Scripts\activate`
     ```
 
-3. **Launch Jupyter Notebook**:
+    Or using `conda`:
+    ```bash
+    conda create --name ml-env python=3.8
+    conda activate ml-env
+    ```
+
+3. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Launch Jupyter Notebook**:
     ```bash
     jupyter notebook
     ```
-    Open `3-Decision_Trees_und_Random_Forests_Projekt-Loesung.ipynb` in the Jupyter interface to run the notebook.
+    Open `3-Decision_Trees_und_Random_Forests.ipynb` in the Jupyter interface to run the notebook.
 
 ### Running Online via MyBinder
 
-Click the following button to launch the notebook in a MyBinder environment:
+MyBinder is a free service that allows you to run Jupyter notebooks online without needing to install anything locally. It creates an interactive environment where you can execute notebooks directly from your browser
+
+Click the following button to launch the notebook in a MyBinder environment. This will open a Jupyter environment with all necessary dependencies pre-installed.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/LEAN-96/Decision-Tree.git/HEAD?labpath=notebooks)
 
-This will open a Jupyter environment with all necessary dependencies pre-installed.
+Once MyBinder loads:
+1. Navigate to the notebook (`3-Decision_Trees_und_Random_Forests.ipynb`) in the file browser on the left side of your screen.
+2. Open the notebook by clicking on it.
+3. To run all cells in sequence, click "Cell" -> "Run All" from the top menu or run each cell individually by selecting it and pressing `Shift + Enter`.
+4. Wait for each cell to execute; outputs will appear below each code block as they complete.
 
-## Reproducing the Analysis
+By using MyBinder, you can explore and run this notebook without installing any software locally.
 
-The notebook walks you through the following steps:
 
-1. **Data Loading**: Reads in a dataset of loan data. Ensure `loan_data.csv` is available in the root directory.
-2. **Data Exploration**: Summarizes and visualizes the dataset, providing insights into its structure and characteristics.
-3. **Model Training**: Implements decision trees and random forests using `scikit-learn`.
-4. **Evaluation**: Compares model performance using evaluation metrics like accuracy and confusion matrices.
 
-## Requirements
+## 3. Reproducing the Results
 
-- **Python**: Version specified in `environment.yml` (usually compatible with Python 3.8+).
-- **Packages**: The main libraries required are:
-    - `numpy`
-    - `pandas`
-    - `matplotlib`
-    - `seaborn`
-    - `scikit-learn`
-    - Additional packages listed in the `environment.yml` file.
+To reproduce the results from this project:
 
-## Dependencies
+1. Open the provided notebook (`3-Decision_Trees_und_Random_Forests.ipynb`) from the Jupyter interface.
+2. Run each cell sequentially by pressing `Shift + Enter` or by clicking "Run" in the Jupyter toolbar.
+3. Ensure that all cells execute without errors.
+4. At the end of execution, observe accuracy metrics and visualizations to evaluate model performance.
 
-Dependencies are managed in the `environment.yml` file. This setup file installs the necessary libraries when creating the environment.
-
-## Additional Notes
-
-- **nbgitpuller** and **sphinx-gallery** are installed for optional integration with external Git repositories and documentation generation, respectively.
-- Ensure you have the necessary permissions to load the data (`loan_data.csv`) if it is not publicly available.
+### Interpreting Results:
+- **Accuracy**: The accuracy metric shows how well each model performs on both training and test datasets.
+- **Confusion Matrix**: Visualizes how well each class is predicted by comparing actual vs predicted labels.
+- **Feature Importance (Random Forest)**: Shows which features contribute most to the predictions made by Random Forest.
 
