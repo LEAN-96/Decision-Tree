@@ -6,12 +6,18 @@ This project demonstrates the implementation of **Decision Trees** and **Random 
 
 
 ### Dataset
-The dataset used in this project is suitable for classification tasks (e.g., Iris or a similar open-source dataset). The data is preprocessed and split into training and testing sets. The notebook walks through the steps of loading the dataset, preparing it for model training, and evaluating the models' performance.
+The dataset used in this classification problem aims to predict **loan repayment status**. The two classes are:
+- **Class 0**: Loan was **repaid**.
+- **Class 1**: Loan was **not repaid**.
+
+ The data is preprocessed and split into training and testing sets. The notebook walks through the steps of loading the dataset, preparing it for model training, and evaluating the models' performance.
 
 ### Machine Learning Methods
 The notebook implements:
 - **Decision Trees**: A tree-structured classifier where internal nodes represent features, branches represent decision rules, and leaf nodes represent outcomes.
 - **Random Forests**: An ensemble method that builds multiple decision trees and merges them to obtain a more accurate and stable prediction.
+
+The goal is to classify whether a loan will be repaid (class 0) or not (class 1), based on various financial features. Random Forests were chosen alongside Decision Trees to enhance model performance by leveraging the ensemble method's ability to generalize better.
 
 ### Notebook Overview
 The notebook contains several sections:
@@ -82,7 +88,54 @@ To reproduce the results from this project:
 4. At the end of execution, observe accuracy metrics and visualizations to evaluate model performance.
 
 ### Interpreting Results:
-- **Accuracy**: The accuracy metric shows how well each model performs on both training and test datasets.
-- **Confusion Matrix**: Visualizes how well each class is predicted by comparing actual vs predicted labels.
-- **Feature Importance (Random Forest)**: Shows which features contribute most to the predictions made by Random Forest.
 
+After training the models (e.g., Decision Tree or Random Forest), you will typically evaluate their performance using several key metrics. These metrics help you understand how well the model is performing on both the training and test datasets.
+
+Both models (Decision Tree and Random Forest) are evaluated using the following metrics:
+
+- **Precision**: The proportion of true positive predictions out of all positive predictions made by the model.
+  - High precision means fewer false positives.
+  
+- **Recall (Sensitivity)**: The proportion of actual positives that were correctly identified by the model.
+  - High recall means fewer false negatives.
+  
+- **F1-Score**: The harmonic mean of precision and recall, providing a balance between the two.
+  - Useful when dealing with imbalanced classes.
+  
+- **Support**: The number of actual occurrences of each class in the dataset.
+
+## Confusion Matrix:
+The confusion matrix shows the breakdown of correct and incorrect predictions:
+- **True Positives (TP)**: Correctly predicted loans that were not repaid (class 1).
+- **True Negatives (TN)**: Correctly predicted loans that were repaid (class 0).
+- **False Positives (FP)**: Incorrectly predicted as not repaid when they were repaid.
+- **False Negatives (FN)**: Incorrectly predicted as repaid when they were not repaid.
+
+## Decision Tree Results:
+- **Class 0 (Repaid)**:
+  - Precision: 0.85, Recall: 0.82, F1-score: 0.84
+- **Class 1 (Not Repaid)**:
+  - Precision: 0.19, Recall: 0.24, F1-score: 0.21
+- **Overall Accuracy**: 73%
+
+**Confusion Matrix:**
+
+[[1993, 438],
+[338, 105]]
+
+
+## Random Forest Results:
+- **Class 0 (Repaid)**:
+  - Precision: 0.85, Recall: 1.00, F1-score: 0.92
+- **Class 1 (Not Repaid)**:
+  - Precision: 0.47, Recall: 0.02, F1-score: 0.04
+- **Overall Accuracy**: 85%
+
+**Confusion Matrix:**
+
+[[2421, 10],
+[434, 9]]
+
+
+## Summary:
+Both models perform well in predicting loans that will be repaid (**class 0**) but struggle with identifying loans that will not be repaid (**class 1**). Random Forest achieves higher accuracy but still has poor recall for class "1", indicating a need for further tuning or handling of class imbalance.
