@@ -121,6 +121,7 @@ The confusion matrix shows the breakdown of correct and incorrect predictions:
 **Confusion Matrix:**
 
 [[1993, 438],
+
 [338, 105]]
 
 
@@ -133,7 +134,8 @@ The confusion matrix shows the breakdown of correct and incorrect predictions:
 
 **Confusion Matrix:**
 
-[[2421, 10],
+[[2421, 10]
+
 [434, 9]]
 
 
